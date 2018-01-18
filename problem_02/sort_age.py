@@ -1,4 +1,9 @@
 def count_ages(input_file):
+    """
+    count ages from range 0-150 occurs in input file
+    :param input_file: input file path
+    :return: mapped age to number of occurrences in input_file, except 0 valued key (age)
+    """
     # initialize 0 valued dictionary with keys 0 to 150
     # assuming 150 is max value for oldest age in the world
     ages = {x: 0 for x in range(0, 151)}
@@ -11,13 +16,15 @@ def count_ages(input_file):
     except Exception as e:
         print(e)
 
-    # cleanup all 0 valued occurrences if any
-    ages = {k: v for k, v in ages.items() if v != 0}
-
     return ages
 
 
 def sort_ages(input_file, output_file):
+    """
+    count occurrences of ages, and then output sorted ages to output file
+    :param input_file: input file path
+    :param output_file: output file path
+    """
     # count occurrences of ages from input file
     ages = count_ages(input_file)
 
