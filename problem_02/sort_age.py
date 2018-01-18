@@ -1,3 +1,6 @@
+import argparse
+
+
 def count_ages(input_file):
     """
     count ages from range 0-150 occurs in input file
@@ -41,4 +44,12 @@ def sort_ages(input_file, output_file):
 
 
 if __name__ == '__main__':
-    sort_ages('age.txt', 'sorted_age.txt')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--input', type=str, help="input file path")
+    parser.add_argument('--output', type=str, help="output file path")
+
+    args = parser.parse_args()
+    if args.input and args.output:
+        sort_ages(args.input, args.output)
+    else:
+        parser.print_help()
