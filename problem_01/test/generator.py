@@ -2,7 +2,6 @@ import csv
 import random
 from collections import defaultdict
 from datetime import datetime, timedelta
-from pprint import pprint
 
 PRODUCT_SCORE_FILE = '../product_score.txt'
 USERS_ID_FILE = '../users_id.txt'
@@ -47,7 +46,6 @@ def read_tsv(input_file):
 
 def random_timestamp_days_behind(start, days):
     start = start
-    end = start + timedelta(days=days)
     random_date = start + timedelta(days=30) * random.random()
     return int(random_date.timestamp())
 
