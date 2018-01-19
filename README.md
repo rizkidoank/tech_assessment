@@ -16,14 +16,14 @@ Here is the names of main program for each problem:
 python recommender.py --initialize
 
 ##### Top 5 Products by User ID
-python recommender.py --recommend-products <uid>
+python recommender.py --recommend-products uid
 
 ##### Read TSV
-python recommender.py --read-tsv <tsv_file_path>
+python recommender.py --read-tsv tsv_file_path
 
 ### Problem 02 : Sort Age
 #### How to use
-python sort_age --input <input_file> --output <output_sorted_file>
+python sort_age --input input_file --output output_sorted_file
 
 ### Generator
 For each problem contains dataset generator which created with
