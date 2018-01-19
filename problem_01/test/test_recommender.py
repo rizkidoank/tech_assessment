@@ -1,11 +1,9 @@
 import csv
 import unittest
-from collections import defaultdict
-
-from problem_01.recommender import initialize, top_5_product
-
 import logging
 import sys
+from collections import defaultdict
+from problem_01.recommender import initialize, top_5_product
 
 logger = logging.getLogger()
 logger.level = logging.DEBUG
@@ -34,12 +32,13 @@ class RecommenderTestCase(unittest.TestCase):
         self.calculated_score = None
 
     def test_initialize(self):
-        self.calculated_score = initialize(USER_PREFERENCE_FILE, PRODUCT_SCORE_FILE)
-        self.assertEqual(self.calculated_score, [['12341', '2123', 240], ['12341', '2939', 480]])
+        self.calculated_score = initialize(
+            USER_PREFERENCE_FILE, PRODUCT_SCORE_FILE)
+        self.assertEqual(self.calculated_score, [
+                         ['12341', '2123', 240], ['12341', '2939', 480]])
 
     def test_top_five(self):
         top_five = top_5_product('12341')
-        logger.info(top_five)
         self.assertListEqual(top_five, ['2939', '2123'])
 
 
